@@ -4,7 +4,7 @@
     "description": "Mocha, Javascript framework using puppeteer test",
     "main": "index.js",
     "scripts": {
-        "test": "mocha index.js"
+        "test": "mocha test"
     },
     "repository": {
         "type": "git",
