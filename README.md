@@ -4,6 +4,16 @@
 This project uses Puppeteer to automate testing
 Mocha testing framework is used to run the tests
 
+## Setup on Linux
+- Open Terminal 
+- Navigate to mocha repo
+- sudo npm install -g n
+- sudo n stable
+- sudo npm install puppeteer 
+- sudo npm install mocha
+- node test
+
+
 ## Requirements
 
 You will need node and npm installed on your machine.
