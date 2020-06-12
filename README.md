@@ -1,3 +1,33 @@
-# mocha-coffee-paper-puppet
-Mocha, Javascript framework using puppeteer
-test
+
+# Summary
+
+This project uses Puppeteer to automate testing
+Mocha testing framework is used to run the tests
+
+## Setup on Linux
+- Open Terminal 
+- Navigate to mocha repo
+- sudo npm install -g n
+- sudo n stable
+- sudo npm install puppeteer 
+- sudo npm install mocha
+- node test
+
+
+## Requirements
+
+You will need node and npm installed on your machine.
+
+## Intalling dependencies
+
+Install all dependencies by running `npm install`
+
+## Dependency List
+
+- Mocha (Testing framework for Javascript)
+- Chai (Assertion Library) [To be added]
+- Puppeteer (Provides API to control Chrome instances)
+
+## Running tests
+
+Test all scenarios by running `npm test`
