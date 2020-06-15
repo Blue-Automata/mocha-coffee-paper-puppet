@@ -1,4 +1,4 @@
-let BasePage = require('../basePage').default;
+let BasePage = require('../basePage');
 
 //Page Object example for Google
 /*
