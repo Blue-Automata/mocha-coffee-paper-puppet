@@ -48,7 +48,7 @@ class BasePage {
     */
     async getText(selector, timeout = this.defaultTimeout) {
         try {
-            return await this.page.$eval('div.g:first-of-type a cite', e => e.innerText);
+            return await this.page.$eval('div.g:first-of-type a cite', e => e.innerText)
         } catch (err) {
             throw new Error(err)
         }

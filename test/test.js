@@ -7,9 +7,9 @@ const { getRandomString, delay } = require('../pageObject/helpers/commonService'
         Describes the test suite
     */
 describe('Google Page', function() {
-    this.timeout(15000); // set timeout for each test scenario
-    let browser;
-    let page;
+    this.timeout(15000) // set timeout for each test scenario
+    let browser
+    let page
 
 
     /*
@@ -30,7 +30,7 @@ describe('Google Page', function() {
         assert(firstResult === searchTerm, assertionMessage)
             // added delay for demo purposes
         await delay(5000)
-    });
+    })
 
 
     /*
@@ -39,23 +39,23 @@ describe('Google Page', function() {
     beforeEach(async() => {
         browser = await puppeteer.launch({
             headless: false
-        });
-        page = await browser.newPage();
-        page.setDefaultTimeout(50000);
+        })
+        page = await browser.newPage()
+        page.setDefaultTimeout(50000)
 
-    });
+    })
 
     /*
         After Hook for each ending scenario
     */
     afterEach(function() {
-        let randomString = getRandomString();
+        let randomString = getRandomString()
         if (this.currentTest.state == "failed") {
-            let screenshotPath = './screenshots/' + this.currentTest.title.replace(/ /g, "_");
+            let screenshotPath = './screenshots/' + this.currentTest.title.replace(/ /g, "_")
             //if error take screenshot
             page.screenshot({ path: screenshotPath }).catch(err => console.log("screenshot failed"))
         }
-        browser.close();
-    });
+        browser.close()
+    })
 
-});
+})

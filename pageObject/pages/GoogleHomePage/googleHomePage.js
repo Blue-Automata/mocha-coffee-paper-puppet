@@ -10,15 +10,15 @@ const { SEARCH_BAR,
 class GoogleHomePage extends BasePage {
 
     constructor(page) {
-        super(page);
-        this.page = page;
+        super(page)
+        this.page = page
     }
 
     /*
         navigates to google home page  
     */
     async navigateToHomePageByUrl() {
-        await this.page.goto("https://google.com");
+        await this.page.goto("https://google.com")
     }
 
     /*
@@ -26,7 +26,7 @@ class GoogleHomePage extends BasePage {
     */
     async search(text) {
         await this.setText(SEARCH_BAR, text)
-        await this.click(SEARCH_BUTTON);
+        await this.click(SEARCH_BUTTON)
     }
 
     /*
@@ -40,10 +40,10 @@ class GoogleHomePage extends BasePage {
         extracts the innert text of the first result
     */
     async getFirstResultText() {
-        return await this.getText(FIRST_CITE);
+        return await this.getText(FIRST_CITE)
     }
 
 }
 
-module.exports = GoogleHomePage;
+module.exports = GoogleHomePage
 
