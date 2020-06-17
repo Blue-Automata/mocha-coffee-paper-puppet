@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer')
 const assert = require('assert')
-let GoogleHomePage = require('../pageObject/pages/GoogleHomePage/googleHomePage')
+const GoogleHomePage = require('../pageObject/pages/Google/HomePage/homePage')
+const GoogleResultPage = require('../pageObject/pages/Google/ResultPage/resultPage')
 const { getRandomString, delay } = require('../pageObject/helpers/commonService')
 
 /*
@@ -20,16 +21,19 @@ describe('Google Page', function() {
     */
     it('Verify sqasquared.com is the first search result ', async() => {
         let expectedText = "sqasquared.com"
-        let homePage = new GoogleHomePage(page)
         let searchTerm = "sqasquared.com"
+
+        let homePage = new GoogleHomePage(page)
         await homePage.navigateToHomePageByUrl()
         await homePage.search(searchTerm)
-        await homePage.waitUntilResultPageIsDisplayed()
-        let firstResult = await homePage.getFirstResultText()
+
+        let resultPage = new GoogleResultPage(page)
+        await resultPage.waitUntilPageIsDisplayed()
+        let firstResult = await resultPage.getFirstResultText()
+        
         let assertionMessage = `Text of (${firstResult}) does not match expected text of (${expectedText})`
         assert(firstResult === searchTerm, assertionMessage)
-            // added delay for demo purposes
-        await delay(5000)
+        await delay(5000) // added delay for demo purposes
     })
 
 

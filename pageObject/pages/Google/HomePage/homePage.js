@@ -1,7 +1,7 @@
-const BasePage = require('../../basePage')
+const BasePage = require('../../../basePage')
 const { SEARCH_BAR,
      SEARCH_BUTTON,
-     FIRST_CITE } = require('./googleHomePageElements')
+     FIRST_CITE } = require('./homePageElements')
 
 //Page Object example for Google
 /*
@@ -27,20 +27,6 @@ class GoogleHomePage extends BasePage {
     async search(text) {
         await this.setText(SEARCH_BAR, text)
         await this.click(SEARCH_BUTTON)
-    }
-
-    /*
-        waits for the result page to display  
-    */
-    async waitUntilResultPageIsDisplayed() {
-        await this.waitUntilDisplayed(FIRST_CITE, 20000)
-    }
-
-    /*
-        extracts the innert text of the first result
-    */
-    async getFirstResultText() {
-        return await this.getText(FIRST_CITE)
     }
 
 }
