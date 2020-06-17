@@ -1,8 +1,7 @@
-const puppeteer = require('puppeteer');
-let assert = require('assert');
-let BasePage = require('../pageObject/basePage');
-let HomePage = require('../pageObject/pages/homePage');
-const { getRandomString, delay } = require('../pageObject/helpers/commonService');
+const puppeteer = require('puppeteer')
+const assert = require('assert')
+let GoogleHomePage = require('../pageObject/pages/GoogleHomePage/googleHomePage')
+const { getRandomString, delay } = require('../pageObject/helpers/commonService')
 
 /*
         Describes the test suite
@@ -15,10 +14,13 @@ describe('Google Page', function() {
 
     /*
         Test scenario
+        1) Goes to Google homepage
+        2) Searches for sqasquared.com
+        3) Verify first search cite result is "sqasquared.com"
     */
     it('Verify sqasquared.com is the first search result ', async() => {
         let expectedText = "sqasquared.com"
-        let homePage = new HomePage(page)
+        let homePage = new GoogleHomePage(page)
         let searchTerm = "sqasquared.com"
         await homePage.navigateToHomePageByUrl()
         await homePage.search(searchTerm)
