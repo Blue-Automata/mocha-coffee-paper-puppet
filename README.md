@@ -3,14 +3,13 @@
 
 Browser automation framework using Puppeteer and Mocha
 
-
 ## Setup on Linux
 
-- Open Terminal 
+- Open Terminal
 - Navigate to mocha repo
 - sudo npm install -g n
 - sudo n stable
-- sudo npm install puppeteer 
+- sudo npm install puppeteer
 - sudo npm install mocha
 - node test
 
