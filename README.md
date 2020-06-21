@@ -24,9 +24,10 @@ Install all dependencies by running `npm install`
 
 ## Dependency List
 
-- Mocha (Testing framework for Javascript)
-- Chai (Assertion Library) [To be added]
-- Puppeteer (Provides API to control Chrome instances)
+- Mocha: Testing framework for Javascript
+- Chai: Assertion Library [To be added]
+- Puppeteer: Provides API to control Chrome instances
+- Axios: HTTP client to send asynchronous HTTP requests to REST       endpoints
 
 ## Running tests
 
