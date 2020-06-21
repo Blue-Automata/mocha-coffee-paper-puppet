@@ -11,13 +11,14 @@ class GoogleHomePage extends BasePage {
 
     constructor(page) {
         super(page)
+
         this.page = page
     }
 
     /*
         navigates to google home page  
     */
-    async navigateToHomePageByUrl() {
+    async navigateToPageByUrl() {
         await this.page.goto("https://google.com")
     }
 

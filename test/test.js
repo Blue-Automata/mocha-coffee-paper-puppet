@@ -24,14 +24,16 @@ describe('Google Page', function() {
         let searchTerm = "sqasquared.com"
 
         let homePage = new GoogleHomePage(page)
-        await homePage.navigateToHomePageByUrl()
+        await homePage.navigateToPageByUrl()
         await homePage.search(searchTerm)
 
         let resultPage = new GoogleResultPage(page)
         await resultPage.waitUntilPageIsDisplayed()
         let firstResult = await resultPage.getFirstResultText()
         
-        let assertionMessage = `Text of (${firstResult}) does not match expected text of (${expectedText})`
+        let assertionMessage = `Text of (${firstResult})
+         does not match expected text of (${expectedText})`
+
         assert(firstResult === searchTerm, assertionMessage)
         await delay(5000) // added delay for demo purposes
     })
