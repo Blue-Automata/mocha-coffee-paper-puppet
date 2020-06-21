@@ -1,10 +1,11 @@
 
 # Summary
 
-This project uses Puppeteer to automate testing
-Mocha testing framework is used to run the tests
+Browser automation framework using Puppeteer and Mocha
+
 
 ## Setup on Linux
+
 - Open Terminal 
 - Navigate to mocha repo
 - sudo npm install -g n
