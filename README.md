@@ -31,3 +31,10 @@ Install all dependencies by running `npm install`
 ## Running tests
 
 Test all scenarios by running `npm test`
+
+## Running tests on Docker
+
+Prerequisite: Docker installed
+
+1. Build the image from the Dockerfile by running `docker build -t automation/mocha:v1 .`
+2. Run the test by starting the container based on the new image `docker run --rm automation/mocha:v1 npm test`
