@@ -5,6 +5,8 @@ const GoogleHomePage = require('../pageObject/pages/Google/HomePage/homePage')
 const GoogleResultPage = require('../pageObject/pages/Google/ResultPage/resultPage')
 const { getRandomString, delay } = require('../pageObject/helpers/commonService')
 
+const { congratulations } = require('../pageObject/helpers/congratulations')
+
 /*
         Describes the test suite
     */
@@ -36,6 +38,7 @@ describe('Google Page', function() {
          does not match expected text of (${expectedText})`
 
         assert(firstResult === searchTerm, assertionMessage)
+        congratulations(page)
         await delay(5000) // added delay for demo purposes
     })
 
