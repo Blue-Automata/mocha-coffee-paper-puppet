@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const getBrowserConfiguration = require('../pageObject/configurations/browserConfigurations')
 const assert = require('assert')
 const GoogleHomePage = require('../pageObject/pages/Google/HomePage/homePage')
 const GoogleResultPage = require('../pageObject/pages/Google/ResultPage/resultPage')
@@ -46,9 +47,7 @@ describe('Google Page', function() {
         Before Hook for each scenario instance
     */
     beforeEach(async() => {
-        browser = await puppeteer.launch({
-            headless: false
-        })
+        browser = await puppeteer.launch(getBrowserConfiguration());
         page = await browser.newPage()
         page.setDefaultTimeout(50000)
 
